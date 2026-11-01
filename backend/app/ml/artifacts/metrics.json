@@ -1,0 +1,133 @@
+{
+  "trained_at_utc": "2026-11-01T07:37:49+00:00",
+  "random_seed": 42,
+  "sklearn_version": "1.8.0",
+  "numpy_version": "2.4.4",
+  "chosen_model": "logistic_regression",
+  "selection_rule": "highest 5-fold CV ROC-AUC on the training split; simplest model within 1 std of the best is preferred",
+  "dataset": {
+    "records": 768,
+    "class_counts": {
+      "0": 500,
+      "1": 268
+    },
+    "missing_encoded_as_zero": {
+      "Glucose": 5,
+      "BloodPressure": 35,
+      "SkinThickness": 227,
+      "Insulin": 374,
+      "BMI": 11
+    },
+    "features_used": [
+      "Glucose",
+      "BloodPressure",
+      "BMI",
+      "Age"
+    ],
+    "sha256": "698c203a14aa31941d2251175330c9199f3ccdb31597abbba2a3e35416257a72",
+    "age_range": [
+      21,
+      81
+    ],
+    "missing_after_cleaning": {
+      "Glucose": 5,
+      "BloodPressure": 35,
+      "BMI": 11,
+      "Age": 0
+    }
+  },
+  "split": {
+    "train": 614,
+    "test": 154,
+    "test_size": 0.2,
+    "stratified": true
+  },
+  "cross_validation": {
+    "logistic_regression": {
+      "roc_auc_mean": 0.8350456810631229,
+      "roc_auc_std": 0.018994085063017755,
+      "folds": [
+        0.8630813953488372,
+        0.8264534883720931,
+        0.85,
+        0.8258720930232558,
+        0.8098214285714286
+      ]
+    },
+    "decision_tree": {
+      "roc_auc_mean": 0.7958887043189369,
+      "roc_auc_std": 0.030073568382171335,
+      "folds": [
+        0.8409883720930231,
+        0.8113372093023257,
+        0.7968023255813954,
+        0.7517441860465117,
+        0.7785714285714286
+      ]
+    },
+    "random_forest": {
+      "roc_auc_mean": 0.8261129568106312,
+      "roc_auc_std": 0.032835939397659324,
+      "folds": [
+        0.8773255813953489,
+        0.804360465116279,
+        0.8526162790697676,
+        0.7944767441860465,
+        0.8017857142857143
+      ]
+    }
+  },
+  "test_metrics": {
+    "threshold": 0.5,
+    "n_test": 154,
+    "accuracy": 0.7012987012987013,
+    "precision": 0.5666666666666667,
+    "recall": 0.6296296296296297,
+    "f1": 0.5964912280701754,
+    "roc_auc": 0.7864814814814814,
+    "brier_score": 0.1920966237968551,
+    "confusion_matrix": {
+      "labels": [
+        0,
+        1
+      ],
+      "matrix": [
+        [
+          74,
+          26
+        ],
+        [
+          20,
+          34
+        ]
+      ]
+    },
+    "per_class": {
+      "no_diabetes(0)": {
+        "precision": 0.7872340425531915,
+        "recall": 0.74,
+        "f1-score": 0.7628865979381443,
+        "support": 100.0
+      },
+      "diabetes(1)": {
+        "precision": 0.5666666666666667,
+        "recall": 0.6296296296296297,
+        "f1-score": 0.5964912280701754,
+        "support": 54.0
+      },
+      "macro avg": {
+        "precision": 0.6769503546099291,
+        "recall": 0.6848148148148148,
+        "f1-score": 0.6796889130041599,
+        "support": 154.0
+      },
+      "weighted avg": {
+        "precision": 0.7098922354241503,
+        "recall": 0.7012987012987013,
+        "f1-score": 0.7045401695428825,
+        "support": 154.0
+      }
+    },
+    "note": "Positive class = diabetes diagnosed within 5 years. Metrics come from a single held-out split of 154 records; expect wide uncertainty."
+  }
+}

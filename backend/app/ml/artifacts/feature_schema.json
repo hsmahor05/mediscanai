@@ -1,0 +1,44 @@
+{
+  "features": [
+    {
+      "name": "Glucose",
+      "label": "2-hour OGTT plasma glucose",
+      "unit": "mg/dL",
+      "required": true,
+      "min": 40,
+      "max": 500
+    },
+    {
+      "name": "BMI",
+      "label": "Body mass index",
+      "unit": "kg/m2",
+      "required": true,
+      "min": 10,
+      "max": 70
+    },
+    {
+      "name": "Age",
+      "label": "Age",
+      "unit": "years",
+      "required": true,
+      "min": 21,
+      "max": 100
+    },
+    {
+      "name": "BloodPressure",
+      "label": "Diastolic blood pressure",
+      "unit": "mmHg",
+      "required": false,
+      "min": 30,
+      "max": 150
+    }
+  ],
+  "feature_order": [
+    "Glucose",
+    "BloodPressure",
+    "BMI",
+    "Age"
+  ],
+  "target": "Outcome (1 = diabetes diagnosed within 5 years of baseline, 0 = not)",
+  "population": "Female, age >= 21, Pima Indian heritage"
+}
